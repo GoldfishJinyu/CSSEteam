@@ -37,7 +37,7 @@ class GameLevelSpace {
         ANIMATION_RATE: 50,
         GRAVITY: true,
         INIT_POSITION: { x: 0, y: height - (height/ASTRONAUT_SCALE_FACTOR) }, 
-        pixels: {height: 1024, width: 1536},
+        pixels: {height: 1024, width: 768},
         orientation: {rows: 3, columns: 2 },
         down: {row: 0, start: 0, columns: 2 },
         downLeft: {row: 0, start: 0, columns: 2, mirror: true, rotate: Math.PI/16 }, // mirror is used to flip the sprite
