@@ -24,20 +24,20 @@ class GameLevelSpace {
         pixels: {height: 1402, width: 1122}
     };
 
-    // Player Data for Octopus
-    const sprite_src_octopus = path + "/images/projects/gamify/water/octopus.png"; // be sure to include the path
-    const OCTOPUS_SCALE_FACTOR = 5;
-    const sprite_data_octopus = {
-        id: 'Octopus',
+    // Player Data for Astronaut
+    const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png"; // be sure to include the path
+    const ASTRONAUT_SCALE_FACTOR = 5;
+    const sprite_data_astronaut = {
+        id: 'Astronaut',
         name: 'mainplayer',
-        greeting: "Hi I am Octopus, the water wanderer. I am looking for wisdome and adventure!",
-        src: sprite_src_octopus,
-        SCALE_FACTOR: OCTOPUS_SCALE_FACTOR,
+        greeting: "Hi I am Astronaut, the space explorer. I am looking for wisdom and adventure!",
+        src: sprite_src_astronaut,
+        SCALE_FACTOR: ASTRONAUT_SCALE_FACTOR,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
         GRAVITY: true,
-        INIT_POSITION: { x: 0, y: height - (height/OCTOPUS_SCALE_FACTOR) }, 
-        pixels: {height: 250, width: 167},
+        INIT_POSITION: { x: 0, y: height - (height/ASTRONAUT_SCALE_FACTOR) }, 
+        pixels: {height: 1024, width: 1536},
         orientation: {rows: 3, columns: 2 },
         down: {row: 0, start: 0, columns: 2 },
         downLeft: {row: 0, start: 0, columns: 2, mirror: true, rotate: Math.PI/16 }, // mirror is used to flip the sprite
@@ -178,7 +178,7 @@ const sprite_src_puffer = path + "/images/projects/gamify/water/puffer.png";
 
     this.classes = [      
       { class: GameEnvBackground, data: image_data_space },
-      { class: Player, data: sprite_data_octopus },
+      { class: Player, data: sprite_data_astronaut },
       { class: Npc, data: sprite_data_nomad },
       { class: Npc, data: sprite_data_nezuko },
       { class: Shark, data: sprite_data_shark },
