@@ -28,27 +28,27 @@ class GameLevelSpace {
     const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png"; // be sure to include the path
     const ASTRONAUT_SCALE_FACTOR = 5;
     const sprite_data_astronaut = {
-        id: 'Astronaut',
+       id: 'Astronaut',
         name: 'mainplayer',
-        greeting: "Hi I am Astronaut, the space explorer. I am looking for wisdom and adventure!",
-        src: sprite_src_astronaut,
-        SCALE_FACTOR: ASTRONAUT_SCALE_FACTOR,
-        STEP_FACTOR: 1000,
-        ANIMATION_RATE: 50,
-        GRAVITY: true,
-        INIT_POSITION: { x: 0, y: height - (height/ASTRONAUT_SCALE_FACTOR) }, 
-        pixels: {height: 1024, width: 768},
-        orientation: {rows: 3, columns: 2 },
-        down: {row: 0, start: 0, columns: 2 },
-        downLeft: {row: 0, start: 0, columns: 2, mirror: true, rotate: Math.PI/16 }, // mirror is used to flip the sprite
-        downRight: {row: 0, start: 0, columns: 2, rotate: -Math.PI/16 },
-        left: {row: 1, start: 0, columns: 2, mirror: true }, // mirror is used to flip the sprite
-        right: {row: 1, start: 0, columns: 2 },
-        up: {row: 0, start: 0, columns: 2},
-        upLeft: {row: 1, start: 0, columns: 2, mirror: true, rotate: -Math.Pi/16 }, // mirror is used to flip the sprite
-        upRight: {row: 1, start: 0, columns: 2, rotate: Math.PI/16 },
-        hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
-        keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
+       greeting: "Hi I am Astronaut, the space explorer. I am looking for wisdom and adventure!",
+    src: sprite_src_astronaut,
+    SCALE_FACTOR: ASTRONAUT_SCALE_FACTOR,
+    STEP_FACTOR: 1000,
+    ANIMATION_RATE: 50,
+    GRAVITY: true,
+    INIT_POSITION: { x: 0, y: height - (height/ASTRONAUT_SCALE_FACTOR) }, 
+    pixels: {height: 1536, width: 1024},
+    orientation: {rows: 3, columns: 2 },
+    down: {row: 0, start: 0, columns: 2 },
+    downLeft: {row: 0, start: 0, columns: 2, mirror: true, rotate: Math.PI/16 }, // mirror is used to flip the sprite
+    downRight: {row: 0, start: 0, columns: 2, rotate: -Math.PI/16 },
+    left: {row: 1, start: 0, columns: 2, mirror: true }, // mirror is used to flip the sprite
+    right: {row: 1, start: 0, columns: 2 },
+    up: {row: 2, start: 0, columns: 2},
+    upLeft: {row: 2, start: 0, columns: 2, mirror: true, rotate: -Math.PI/16 }, // mirror is used to flip the sprite
+    upRight: {row: 2, start: 0, columns: 2, rotate: Math.PI/16 },
+    hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
+    keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     };
 
     // NPC Data for Byte Nomad (Smaller Version)
