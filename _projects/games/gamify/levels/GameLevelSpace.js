@@ -39,14 +39,10 @@ class GameLevelSpace {
     INIT_POSITION: { x: 0, y: height - (height / ASTRONAUT_SCALE_FACTOR) },
     pixels: { height: 1536, width: 1024 },
     orientation: { rows: 3, columns: 2 },
-    down:  { row: 2, start: 0, columns: 2 },                          // 喷气飞行
-    downLeft: { row: 2, start: 0, columns: 2, mirror: true },
-    downRight: { row: 2, start: 0, columns: 2 },
-    left:  { row: 0, start: 0, columns: 2, mirror: true },            // 跑步（左）
-    right: { row: 0, start: 0, columns: 2 },                          // 跑步（右）
-    up:    { row: 2, start: 0, columns: 2 },                          // 喷气飞行
-    upLeft: { row: 2, start: 0, columns: 2, mirror: true },
-    upRight: { row: 2, start: 0, columns: 2 },
+    down:  { row: 2, start: 1, columns: 1 },                          // 喷气飞行
+    left:  { row: 0, start: 1, columns: 1 },                          // 左侧朝向
+    right: { row: 0, start: 0, columns: 1 },                          // 右侧朝向
+    up:    { row: 2, start: 0, columns: 1 },                          // 喷气飞行
     hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
     keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
 };
