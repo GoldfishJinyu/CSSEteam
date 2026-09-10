@@ -25,8 +25,8 @@ class GameLevelSpace {
     };
 
     // Player Data for Astronaut
-  const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png";
-  const ASTRONAUT_SCALE_FACTOR = 5;
+  const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut-1st ver.png";
+  const ASTRONAUT_SCALE_FACTOR = 4;
   const sprite_data_astronaut = {
     id: 'Astronaut',
     name: 'mainplayer',
@@ -42,8 +42,8 @@ class GameLevelSpace {
     down:  { row: 2, start: 0, columns: 2 },                          // 喷气飞行
     downLeft: { row: 2, start: 0, columns: 2, mirror: true },
     downRight: { row: 2, start: 0, columns: 2 },
-    left:  { row: 1, start: 0, columns: 2, mirror: true },            // 跑步（左）
-    right: { row: 1, start: 0, columns: 2 },                          // 跑步（右）
+    left:  { row: 0, start: 0, columns: 2, mirror: true },            // 跑步（左）
+    right: { row: 0, start: 0, columns: 2 },                          // 跑步（右）
     up:    { row: 2, start: 0, columns: 2 },                          // 喷气飞行
     upLeft: { row: 2, start: 0, columns: 2, mirror: true },
     upRight: { row: 2, start: 0, columns: 2 },
