@@ -25,8 +25,6 @@ class GameLevelSpace {
     };
 
     // Player Data for Astronaut
-const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png"; // be sure to include the path
-const ASTRONAUT_SCALE_FACTOR = 5;
 const sprite_data_astronaut = {
     id: 'Astronaut',
     name: 'mainplayer',
@@ -39,20 +37,10 @@ const sprite_data_astronaut = {
     INIT_POSITION: { x: 0, y: height - (height / ASTRONAUT_SCALE_FACTOR) },
     pixels: { height: 1536, width: 1024 },
     orientation: { rows: 3, columns: 2 },
-    // 图片本身都是朝右的侧面姿势，所以 right 用原图，left 用 mirror 翻转
-    // row 0 = 行走, row 1 = 跑步, row 2 = 喷气飞行
-    walk: {
-        right: { row: 0, start: 0, columns: 2 },
-        left:  { row: 0, start: 0, columns: 2, mirror: true }
-    },
-    run: {
-        right: { row: 1, start: 0, columns: 2 },
-        left:  { row: 1, start: 0, columns: 2, mirror: true }
-    },
-    fly: {
-        right: { row: 2, start: 0, columns: 2 },
-        left:  { row: 2, start: 0, columns: 2, mirror: true }
-    },
+    down:  { row: 0, start: 0, columns: 2 },                          // 走路
+    left:  { row: 1, start: 0, columns: 2, mirror: true },            // 跑步（左）
+    right: { row: 1, start: 0, columns: 2 },                          // 跑步（右）
+    up:    { row: 2, start: 0, columns: 2 },                          // 喷气飞行
     hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
     keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
 };
