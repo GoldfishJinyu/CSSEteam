@@ -25,7 +25,9 @@ class GameLevelSpace {
     };
 
     // Player Data for Astronaut
-const sprite_data_astronaut = {
+  const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png";
+  const ASTRONAUT_SCALE_FACTOR = 5;
+  const sprite_data_astronaut = {
     id: 'Astronaut',
     name: 'mainplayer',
     greeting: "Hi I am Astronaut, the space explorer. I am looking for wisdom and adventure!",
@@ -37,10 +39,14 @@ const sprite_data_astronaut = {
     INIT_POSITION: { x: 0, y: height - (height / ASTRONAUT_SCALE_FACTOR) },
     pixels: { height: 1536, width: 1024 },
     orientation: { rows: 3, columns: 2 },
-    down:  { row: 0, start: 0, columns: 2 },                          // 走路
+    down:  { row: 2, start: 0, columns: 2 },                          // 喷气飞行
+    downLeft: { row: 2, start: 0, columns: 2, mirror: true },
+    downRight: { row: 2, start: 0, columns: 2 },
     left:  { row: 1, start: 0, columns: 2, mirror: true },            // 跑步（左）
     right: { row: 1, start: 0, columns: 2 },                          // 跑步（右）
     up:    { row: 2, start: 0, columns: 2 },                          // 喷气飞行
+    upLeft: { row: 2, start: 0, columns: 2, mirror: true },
+    upRight: { row: 2, start: 0, columns: 2 },
     hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
     keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
 };
