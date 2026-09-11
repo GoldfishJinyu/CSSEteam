@@ -25,8 +25,8 @@ class GameLevelSpace {
     };
 
     // Player Data for Astronaut
-  const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut-1st ver.png";
-  const ASTRONAUT_SCALE_FACTOR = 4;
+  const sprite_src_astronaut = path + "/images/projects/gamify/space/astronaut.png";
+  const ASTRONAUT_SCALE_FACTOR = 5;
   const sprite_data_astronaut = {
     id: 'Astronaut',
     name: 'mainplayer',
