@@ -37,7 +37,7 @@ class GameLevelSpace {
     ANIMATION_RATE: 50,
     GRAVITY: true,
     INIT_POSITION: { x: 0, y: height - (height / ASTRONAUT_SCALE_FACTOR) },
-    pixels: { height: 1536, width: 1024 },
+    pixels: { height: 250, width: 167 },
     orientation: { rows: 3, columns: 2 },
     down:  { row: 2, start: 1, columns: 1 },                          // 喷气飞行
     left:  { row: 0, start: 1, columns: 1 },                          // 左侧朝向
