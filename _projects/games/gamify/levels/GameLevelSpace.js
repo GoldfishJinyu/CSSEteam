@@ -40,7 +40,7 @@ class GameLevelSpace {
     pixels: { height: 250, width: 167 },
     orientation: { rows: 3, columns: 2 },
     down:  { row: 2, start: 1, columns: 1 },                          // 喷气飞行
-    left:  { row: 0, start: 1, columns: 1 },                          // 左侧朝向
+    left: {row: 1, start: 0, columns: 2, mirror: true }, // mirror is used to flip the sprite
     right: { row: 0, start: 0, columns: 1 },                          // 右侧朝向
     up:    { row: 2, start: 0, columns: 1 },                          // 喷气飞行
     hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
