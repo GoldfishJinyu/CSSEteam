@@ -1,12 +1,12 @@
 ---
 layout: post
 categories: ['CSSE JavaScript']
-microblog: True
+microblog: False
 codemirror: True
 title: Classes and Methods
 description: Basics of Classes and Methods
 permalink: /js/classes
-author: Aarnav Jain and Dean
+author: Jailene Tang
 ---
 
 ## JavaScript Classes and Methods: Designing a Cake
