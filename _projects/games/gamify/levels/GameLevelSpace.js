@@ -83,15 +83,15 @@ class GameLevelSpace {
         }
       };
 
-     // Shark Data
-    const sprite_src_shark = path + "/images/projects/gamify/water/shark.png"; // be sure to include the path
-    const sprite_data_shark = {
-        id: 'Shark',
-        greeting: "Enemy Shark",
-        src: sprite_src_shark,
+     // UFO Data
+    const sprite_src_ufo = path + "/images/projects/gamify/space/UFO.png";
+    const sprite_data_ufo = {
+        id: 'UFO',
+        greeting: "Enemy UFO",
+        src: sprite_src_ufo,
         SCALE_FACTOR: 5,
         ANIMATION_RATE: 100,
-        pixels: {height: 225, width: 225},
+        pixels: {height: 824, width: 1908},
         INIT_POSITION: { x: 100, y: 100},
         orientation: {rows: 1, columns: 1 },
         down: {row: 0, start: 0, columns: 1, wiggle: 0.005 },
@@ -99,7 +99,7 @@ class GameLevelSpace {
         left: {row: 0, start: 0, columns: 1, wiggle: 0.005, mirror: true }, // mirror is used to flip the sprite
         hitbox: { widthPercentage: 0.25, heightPercentage: 0.55
          },
-          //walking area creates the box where the Shark can walk in 
+          //walking area creates the box where the UFO can walk in
         walkingArea: {
             xMin: 0, //left boundary
             xMax: width, //right boundary 
@@ -108,7 +108,6 @@ class GameLevelSpace {
          },
         speed: 0.5,
         direction: { x: 1, y: 1 },
-        sound: new Audio(path + "/assets/audio/shark.mp3")
       };
 
     // Nezuko NPC sprite data
@@ -177,7 +176,7 @@ const sprite_src_puffer = path + "/images/projects/gamify/water/puffer.png";
       { class: Player, data: sprite_data_astronaut },
       { class: Npc, data: sprite_data_nomad },
       { class: Npc, data: sprite_data_nezuko },
-      { class: Shark, data: sprite_data_shark },
+      { class: Shark, data: sprite_data_ufo },
       { class: Npc, data: sprite_data_gold }
     ];
   }
