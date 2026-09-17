@@ -11,7 +11,12 @@ author: Jailene and Aroosh
 
 ## JavaScript Classes and Methods: Building a Game Character
 
-## What are Classes and Methods? (1-Minute Explanation)
+### Lesson Plan
+**Learning Objective:** By the end of this lesson, you will be able to create a simple JavaScript class with properties and methods, then use methods to change an object’s information.
+
+**Success Criteria:** You can create a class using a constructor, identify its properties and methods, create an object using `new`, and use its methods to change the object's properties.
+
+<h1 class="lesson-important-title">What are Classes and Methods? (1-Min Explanation)</h1>
 
 In JavaScript, a **class** is like a blueprint for creating objects. It tells us what information an object has and what it can do.
 
@@ -77,7 +82,19 @@ console.log(player.health);
 
 The player starts with 80 health. After using `heal()`, the player's health becomes 90.
 
-# 5-Minute Interactive: The Player Battle
+<style>
+  .popcorn-hack-title {
+    text-shadow: none !important;
+    filter: none !important;
+  }
+
+  .lesson-important-title {
+    text-shadow: none !important;
+    filter: none !important;
+  }
+</style>
+
+<h1 class="popcorn-hack-title">Popcorn Hack: The Player Battle (5-Min Interactive)</h1>
 
 The player starts with **50 health** and has a maximum of **100 health**. The player can heal by 10 health, take 10 damage, never have more than 100 health, and never have less than 0 health.
 
@@ -256,7 +273,7 @@ Create your own game character class with at least two properties and two method
 {% endcapture %}
 
 {% include runners/code.html
-   runner_id="js-classes-2"
+    runner_id="js-classes-2"
    language="javascript"
    challenge=challenge2
    code=code2
@@ -264,7 +281,7 @@ Create your own game character class with at least two properties and two method
 %}
 
 
-## 10-Minute Homework: Build Your Own Game Character
+## Build Your Own Game Character (10-Min Homework)
 
 Create your own JavaScript class for a `Player`, `Enemy`, `Pet`, or `Robot`.
 
@@ -294,17 +311,6 @@ player.takeDamage();
 console.log(player.health);
 console.log(player.coins);
 ```
-
-## Success Criteria
-
-- I created a JavaScript class.
-- I used a constructor.
-- I created at least two properties.
-- I created at least two methods.
-- I created an object using `new`.
-- My methods change the object's properties.
-- I tested my code and checked the output.
-
 
 
 {% capture challenge3 %}
