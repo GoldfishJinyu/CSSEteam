@@ -6,10 +6,10 @@ codemirror: True
 title: Classes and Methods
 description: Basics of Classes and Methods
 permalink: /js/classes
-author: Jailene Tang
+author: Jailene and Aroosh
 ---
 
-## JavaScript Classes and Methods: Designing a Cake
+## JavaScript Classes and Methods: Building a Game Character
 
 ## What are Classes and Methods? (1-Minute Explanation)
 
@@ -17,7 +17,7 @@ In JavaScript, a **class** is like a blueprint for creating objects. It tells us
 
 A **method** is a function inside a class. Methods allow an object to perform an action.
 
-In a bakery, we can create a `Cake` class. A cake can have information such as its flavor, price, and number of slices. The cake can also perform actions, such as changing its flavor or changing its price.
+For example, in a game, we can create a `Player` class. A player can have information such as health and max health. The player can also perform actions such as healing and taking damage.
 
 JavaScript uses a `constructor` to give an object its starting values.
 
@@ -27,117 +27,125 @@ JavaScript uses a `constructor` to give an object its starting values.
 - **Method:** An action the object can perform.
 - **Object:** A real object created from the class.
 
-For example, we can create a chocolate cake that costs $20 and has 8 slices.
+For example, if we create a player with 80 health and a maximum of 100 health, we can use a method to heal the player.
 
-## Example: Creating a Cake
+## Example: Creating a Player
 
 ### 1. Creating the Class
 
 ```javascript
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 }
 ```
 
-The `Cake` class is our blueprint. `flavor`, `price`, and `slices` are properties that store information about the cake.
+The `Player` class is our blueprint. `health` and `maxHealth` are properties that store information about the player.
 
-### 2. Adding Methods
+### 2. Adding a Method
 
 ```javascript
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
-  }
+  heal() {
+    this.health += 10;
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 }
 ```
 
-The `changeFlavor()` method changes the cake's flavor. The `changePrice()` method changes the cake's price.
+The `heal()` method increases the player's health by 10. The `if` statement makes sure the health does not go above the maximum.
 
 ### 3. Creating an Object
 
 ```javascript
-let cake = new Cake("Chocolate", 20, 8);
+let player = new Player(80, 100);
 
-cake.changeFlavor("Strawberry");
+player.heal();
 
-console.log(cake.flavor);
+console.log(player.health);
 ```
 
-The cake starts as **Chocolate**. After using `changeFlavor()`, the flavor becomes **Strawberry**.
+The player starts with 80 health. After using `heal()`, the player's health becomes 90.
 
-## 5-Minute Interactive: Design Your Cake
+# 5-Minute Interactive: The Player Battle
 
-Your cake starts with a Chocolate flavor, a price of $20, and 8 slices. Customers can request changes to the flavor or price.
+The player starts with **50 health** and has a maximum of **100 health**. The player can heal by 10 health, take 10 damage, never have more than 100 health, and never have less than 0 health.
 
 
 
 {% capture challenge0 %}
-Predict what the Cake code will print, then run it. What are the final flavor and price?
+Predict the player's health after healing and taking damage, then run the code.
 {% endcapture %}
 
 {% capture code0 %}
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
+  heal() {
+    this.health += 10;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+  takeDamage() {
+    this.health -= 10;
+    if (this.health < 0) {
+      this.health = 0;
+    }
   }
 }
 
-let cake = new Cake("Chocolate", 20, 8);
-cake.changeFlavor("Strawberry");
-console.log(cake.flavor);
-cake.changePrice(25);
-console.log(cake.price);
+let player = new Player(50, 100);
+player.heal();
+console.log(player.health);
+player.takeDamage();
+console.log(player.health);
 {% endcapture %}
 
 {% capture source0 %}
 ```javascript
 %%js
-//CODE_RUNNER: Predict what the Cake code will print, then run it.
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+//CODE_RUNNER: Predict the player's health after healing and taking damage, then run the code.
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
+  heal() {
+    this.health += 10;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+  takeDamage() {
+    this.health -= 10;
+    if (this.health < 0) {
+      this.health = 0;
+    }
   }
 }
 
-let cake = new Cake("Chocolate", 20, 8);
-cake.changeFlavor("Strawberry");
-console.log(cake.flavor);
-cake.changePrice(25);
-console.log(cake.price);
+let player = new Player(50, 100);
+player.heal();
+console.log(player.health);
+player.takeDamage();
+console.log(player.health);
 ```
 {% endcapture %}
 
@@ -153,58 +161,68 @@ console.log(cake.price);
 
 
 {% capture challenge1 %}
-Start with a Vanilla cake. Predict the final flavor and price before running the code.
+Change the starting health to 20. Predict the final health, then run the code.
 {% endcapture %}
 
 {% capture code1 %}
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
+  heal() {
+    this.health += 10;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+  takeDamage() {
+    this.health -= 10;
+    if (this.health < 0) {
+      this.health = 0;
+    }
   }
 }
 
-let cake = new Cake("Vanilla", 15, 6);
-cake.changeFlavor("Strawberry");
-cake.changePrice(18);
-console.log(cake.flavor);
-console.log(cake.price);
+let player = new Player(20, 100);
+player.heal();
+player.heal();
+player.takeDamage();
+console.log(player.health);
 {% endcapture %}
 
 {% capture source1 %}
 ```javascript
 %%js
-//CODE_RUNNER: Start with a Vanilla cake. Predict the final flavor and price.
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
+//CODE_RUNNER: Change the starting health to 20. Predict the final health, then run the code.
+class Player {
+  constructor(health, maxHealth) {
+    this.health = health;
+    this.maxHealth = maxHealth;
   }
 
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
+  heal() {
+    this.health += 10;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
+  takeDamage() {
+    this.health -= 10;
+    if (this.health < 0) {
+      this.health = 0;
+    }
   }
 }
 
-let cake = new Cake("Vanilla", 15, 6);
-cake.changeFlavor("Strawberry");
-cake.changePrice(18);
-console.log(cake.flavor);
-console.log(cake.price);
+let player = new Player(20, 100);
+player.heal();
+player.heal();
+player.takeDamage();
+console.log(player.health);
 ```
 {% endcapture %}
 
@@ -220,60 +238,20 @@ console.log(cake.price);
 
 
 {% capture challenge2 %}
-Bonus challenge: What will the cake's final flavor and price be?
+Create your own game character class with at least two properties and two methods. Include one method that increases a value and one that decreases a value.
 {% endcapture %}
 
 {% capture code2 %}
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
-  }
-
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
-  }
-
-  changePrice(newPrice) {
-    this.price = newPrice;
-  }
-}
-
-let cake = new Cake("Vanilla", 15, 6);
-cake.changeFlavor("Matcha");
-cake.changePrice(22);
-cake.changeFlavor("Chocolate");
-console.log(cake.flavor);
-console.log(cake.price);
+// Create your own game character class here.
+// Include a constructor, two properties, and two methods.
 {% endcapture %}
 
 {% capture source2 %}
 ```javascript
 %%js
-//CODE_RUNNER: Bonus challenge: What will the cake's final flavor and price be?
-class Cake {
-  constructor(flavor, price, slices) {
-    this.flavor = flavor;
-    this.price = price;
-    this.slices = slices;
-  }
-
-  changeFlavor(newFlavor) {
-    this.flavor = newFlavor;
-  }
-
-  changePrice(newPrice) {
-    this.price = newPrice;
-  }
-}
-
-let cake = new Cake("Vanilla", 15, 6);
-cake.changeFlavor("Matcha");
-cake.changePrice(22);
-cake.changeFlavor("Chocolate");
-console.log(cake.flavor);
-console.log(cake.price);
+//CODE_RUNNER: Create your own game character class with at least two properties and two methods.
+// Create your own game character class here.
+// Include a constructor, two properties, and two methods.
 ```
 {% endcapture %}
 
@@ -286,23 +264,100 @@ console.log(cake.price);
 %}
 
 
-## Homework
+## 10-Minute Homework: Build Your Own Game Character
+
+Create your own JavaScript class for a `Player`, `Enemy`, `Pet`, or `Robot`.
+
+Your class must include a constructor, at least two properties, at least two methods, one method that increases a value, one method that decreases a value, and an object created using `new`.
+
+Example:
+
+```javascript
+class Player {
+  constructor(health, coins) {
+    this.health = health;
+    this.coins = coins;
+  }
+
+  collectCoin() {
+    this.coins += 1;
+  }
+
+  takeDamage() {
+    this.health -= 10;
+  }
+}
+
+let player = new Player(100, 0);
+player.collectCoin();
+player.takeDamage();
+console.log(player.health);
+console.log(player.coins);
+```
+
+## Success Criteria
+
+- I created a JavaScript class.
+- I used a constructor.
+- I created at least two properties.
+- I created at least two methods.
+- I created an object using `new`.
+- My methods change the object's properties.
+- I tested my code and checked the output.
 
 
 
 {% capture challenge3 %}
-Homework Challenge - Create a new cake class with at least two methods.
+Homework: Create your own game character class with at least two methods.
 {% endcapture %}
 
 {% capture code3 %}
-//Try adding a method that changes the number of slices or adds a topping.
+class Player {
+  constructor(health, coins) {
+    this.health = health;
+    this.coins = coins;
+  }
+
+  collectCoin() {
+    this.coins += 1;
+  }
+
+  takeDamage() {
+    this.health -= 10;
+  }
+}
+
+let player = new Player(100, 0);
+player.collectCoin();
+player.takeDamage();
+console.log(player.health);
+console.log(player.coins);
 {% endcapture %}
 
 {% capture source3 %}
 ```javascript
 %%js
-//CODE_RUNNER: Create a new cake class with at least two methods.
-//Try adding a method that changes the number of slices or adds a topping.
+//CODE_RUNNER: Homework: Create your own game character class with at least two methods.
+class Player {
+  constructor(health, coins) {
+    this.health = health;
+    this.coins = coins;
+  }
+
+  collectCoin() {
+    this.coins += 1;
+  }
+
+  takeDamage() {
+    this.health -= 10;
+  }
+}
+
+let player = new Player(100, 0);
+player.collectCoin();
+player.takeDamage();
+console.log(player.health);
+console.log(player.coins);
 
 ```
 {% endcapture %}

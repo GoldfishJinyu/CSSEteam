@@ -48,7 +48,7 @@ export class CodeExecutor {
         execTimeSpan.textContent = `⏱Execution time: ${Date.now() - startTime}ms`;
       }
     } catch (err) {
-      if (lang === 'javascript' && isLocalhost) {
+      if (lang === 'javascript') {
         this.runJavaScriptFallback(code, startTime);
       } else {
         outputDiv.textContent = 'Error: ' + err.message;
@@ -70,7 +70,6 @@ export class CodeExecutor {
       };
 
       eval(code);
-      console.log = originalLog;
 
       outputDiv.textContent = logs.length > 0 ? logs.join('\n') : '[no output]';
       if (execTimeSpan) {
@@ -79,6 +78,8 @@ export class CodeExecutor {
     } catch (evalErr) {
       outputDiv.textContent = 'Error: ' + evalErr.message;
       if (execTimeSpan) execTimeSpan.textContent = '';
+    } finally {
+      console.log = originalLog;
     }
   }
 
